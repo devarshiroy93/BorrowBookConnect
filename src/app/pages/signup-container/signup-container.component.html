@@ -1,0 +1,13 @@
+<div class="container">
+  <lib-card [settings]="cardSettings">
+    <div body>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <app-username-password-form [validators]="validators"></app-username-password-form>
+        <app-address-form></app-address-form>
+        <div class="input-group">
+          <button class="btn-primary" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </lib-card>
+</div>

@@ -1,0 +1,16 @@
+.container{
+    display: grid;
+    padding : 1.2rem;
+    grid-template-columns: 30% 70%;
+    border-bottom : 4px solid #32de84;
+    ul{
+        display: flex;
+        margin :0px;
+        li{
+            list-style: none;
+            margin-left : 1rem;
+            margin-right : 1rem
+        }
+        
+    }
+}

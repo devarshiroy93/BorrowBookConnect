@@ -1,1 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    margin: 0px;
+    background-color: #fafdfd;
+    font-family: 'Nunito', sans-serif;
+    min-height: 100vh;
+}
+input{
+    display: block;
+    width: -webkit-fill-available;
+    padding : 0.8rem;
+
+}
+
+button.btn-primary{
+    padding:0.6rem 1rem;
+    background-color: #32de84;
+    color:white;
+    border: 1px solid #32de84;
+    box-shadow: 0 2px 3px -1px #0000001a, 0 1px #191c2105, 0 0 0 1px #191c2114
+}
+
+button.btn-primary:hover{
+    padding:0.6rem 1rem;
+    background-color: white;
+    color:#32de84;
+    border: 1px solid #32de84;
+    box-shadow: 0 2px 3px -1px #0000001a, 0 1px #191c2105, 0 0 0 1px #191c2114
+}
+
+.input-group{
+    margin-top:0.8rem;
+    margin-bottom:0.8rem
+}
+@font-face {
+    font-family: 'nunitoextralight_italic';
+    src: url('./assets/nunito-webfont/nunito-italic-variablefont_wght-webfont.woff2') format('woff2'),
+         url('./assets/nunito-webfont/nunito-italic-variablefont_wght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'nunitoextralight';
+    src: url('./assets/nunito-webfont/nunito-variablefont_wght-webfont.woff2') format('woff2'),
+         url('./assets/nunito-webfont/nunito-variablefont_wght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
