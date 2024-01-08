@@ -1,0 +1,20 @@
+<section class="container">
+    @for(book of books$ | async ; track book){
+    <div class="item">
+        <lib-card>
+
+            <h4>{{book?.title}}</h4>
+            <p class="language">
+                {{book?.language}}
+            </p>
+            <p class="author">
+                {{book.author}}
+            </p>
+
+
+
+        </lib-card>
+    </div>
+
+    }
+</section>

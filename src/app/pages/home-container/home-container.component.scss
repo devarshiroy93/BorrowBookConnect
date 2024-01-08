@@ -1,0 +1,11 @@
+.container{
+    display: grid;
+    grid-template-columns:  repeat(5, 1fr);
+    .item{
+        margin : 0.4rem;
+        .language{
+            color:#575757;
+            font-size: 1rem;
+        }
+    }
+}

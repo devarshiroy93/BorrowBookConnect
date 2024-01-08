@@ -8,6 +8,9 @@ export const routes: Routes = [
         path: 'signup', loadComponent: () => import('./pages/signup-container/signup-container.component').then(c => c.SignupContainerComponent)
     },
     {
+        path: 'home', loadComponent: () => import('./pages/home-container/home-container.component').then(c => c.HomeContainerComponent)
+    },
+    {
         path : '' , redirectTo : 'login' , pathMatch : 'full'
     }
     ];
