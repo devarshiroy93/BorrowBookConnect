@@ -1,6 +1,13 @@
 import { AbstractControl, ValidationErrors, ValidatorFn } from "@angular/forms"
 
-export interface ControlMessageValidators {
+export interface ControlMessageSettings {
     controlName: string,
-    validators: ((control:AbstractControl) =>ValidationErrors | null)[]
+    validators: ControlMessageValidators[]
+}
+
+export interface ControlMessageValidators {
+
+    key: string,
+    validatorFn: ((control: AbstractControl) => ValidationErrors | null),
+    message: string
 }

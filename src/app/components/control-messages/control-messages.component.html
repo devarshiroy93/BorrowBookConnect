@@ -1,1 +1,6 @@
-<p>control-messages works!</p>
+
+@for(item of (errorKeys$ | async )| objConv : validationMessages ; track item){
+
+    <p class="error-message"><span>&#9888;</span>{{item?.message}}</p>
+}
+
