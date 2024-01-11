@@ -3,7 +3,7 @@ import { CardComponent, CardSettings } from '@devarshiroy93/easylib';
 import { UsernamePasswordFormComponent } from '../../components/username-password-form/username-password-form.component';
 import { FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AddressFormComponent } from '../../components/address-form/address-form.component';
-import { ControlMessageSettings } from '../../components/reusable-form';
+import { ControlMessageSettings, passwordValidation } from '../../components/reusable-form';
 
 const LIBRARYCOMPONENTS = [CardComponent];
 const CORE_MODULES = [ReactiveFormsModule];
@@ -21,16 +21,21 @@ export class SignupContainerComponent implements OnInit {
   validators: ControlMessageSettings[] = [{
     controlName: 'username',
     validators: [
-      { key: 'email', validatorFn: Validators.email , message: 'Should be in valid email format'},
-      { key: 'required', validatorFn: Validators.required , message : 'This field is required' }]
+      { key: 'email', validatorFn: Validators.email, message: 'Should be in valid email format' },
+      { key: 'required', validatorFn: Validators.required, message: 'This field is required' }]
   },
   {
     controlName: 'password',
     validators: [{
-      key: 'pattern',
-      validatorFn: Validators.pattern(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/),
+      key: 'password',
+      validatorFn: passwordValidation,
       message: 'Should support in below format'
-    },]
+    },
+    {
+      key: 'required',
+      validatorFn: Validators.required,
+      message: 'This field is required'
+    }]
   }]
 
   cardSettings: CardSettings = {

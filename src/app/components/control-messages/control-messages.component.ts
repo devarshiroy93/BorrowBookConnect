@@ -22,7 +22,7 @@ export class ControlMessagesComponent implements OnInit {
   controlName: string = '';
 
   @Input({ required: true })
-  validationMessages: { key?: string, message: string }[] = []
+  validationMessages: { key: string, message: string }[] = []
 
   parentContainer = inject(ControlContainer);
 
