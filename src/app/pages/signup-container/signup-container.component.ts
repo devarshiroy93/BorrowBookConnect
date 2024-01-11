@@ -3,7 +3,7 @@ import { CardComponent, CardSettings } from '@devarshiroy93/easylib';
 import { UsernamePasswordFormComponent } from '../../components/username-password-form/username-password-form.component';
 import { FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AddressFormComponent } from '../../components/address-form/address-form.component';
-import { ControlMessageSettings, ControlMessageValidators } from '../../components/reusable-form';
+import { ControlMessageSettings } from '../../components/reusable-form';
 
 const LIBRARYCOMPONENTS = [CardComponent];
 const CORE_MODULES = [ReactiveFormsModule];

@@ -2,14 +2,24 @@
     @for(book of books$ | async ; track book){
     <div class="item">
         <lib-card>
+            <div body class="card-content-container">
+                <div>
+                    <img style="height: 10rem;width: 100%;
+                    object-fit: contain" src="../../../assets/mock/book-3057902_1280.webp" />
+                </div>
 
-            <h4>{{book?.title}}</h4>
-            <p class="language">
-                {{book?.language}}
-            </p>
-            <p class="author">
-                {{book.author}}
-            </p>
+                <h4>{{book?.title}}</h4>
+                <p class="language">
+                    {{book?.language}}
+                </p>
+                <p class="author">
+                    {{book.author}}
+                </p>
+            </div>
+
+            <div footer>
+                <button class="btn-primary full-width">Raise a borrow request</button>
+            </div>
 
 
 

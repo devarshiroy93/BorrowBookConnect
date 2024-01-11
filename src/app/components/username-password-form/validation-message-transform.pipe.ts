@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core'
-import { ControlMessageSettings, ControlMessageValidators } from '../reusable-form';
+import { ControlMessageSettings, ControlMessageValidators,  } from '../reusable-form';
 @Pipe({
     name: 'validationMessageTrnsf',
     standalone: true

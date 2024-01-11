@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, inject } from '@angular/core';
+import { Component, Input, OnInit, inject, OnDestroy } from '@angular/core';
 import { ControlContainer, FormControl, FormGroup, FormGroupDirective, ValidationErrors } from '@angular/forms';
 import { Observable, filter, map, of } from 'rxjs';
 import { ObjectConverterPipe } from './object-converter.pipe';
@@ -8,7 +8,7 @@ import { AsyncPipe } from '@angular/common';
 @Component({
   selector: 'app-control-messages',
   standalone: true,
-  imports: [ObjectConverterPipe ,AsyncPipe],
+  imports: [ObjectConverterPipe, AsyncPipe],
   templateUrl: './control-messages.component.html',
   styleUrl: './control-messages.component.scss',
   viewProviders: [{
@@ -21,8 +21,8 @@ export class ControlMessagesComponent implements OnInit {
   @Input({ required: true })
   controlName: string = '';
 
-  @Input({required : true})
-  validationMessages : {key : string , message : string}[]  =[]
+  @Input({ required: true })
+  validationMessages: { key?: string, message: string }[] = []
 
   parentContainer = inject(ControlContainer);
 
@@ -42,11 +42,13 @@ export class ControlMessagesComponent implements OnInit {
 
     if (this.controlName) {
       const formControl = this.parentForm.form.get(this.controlName);
-      this.errorKeys$ = formControl?.statusChanges.pipe(map(value=>{
+      this.errorKeys$ = formControl?.statusChanges.pipe(map(value => {
         return formControl.errors
       }))
     }
 
   }
+
+
 
 }

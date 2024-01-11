@@ -1,14 +1,14 @@
 import { Component, Input, OnInit, inject } from '@angular/core';
 import { ControlContainer, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ControlMessagesComponent } from '../control-messages/control-messages.component';
-import { ControlMessageSettings, ControlMessageValidators } from '../reusable-form';
+import { ControlMessageSettings } from '../reusable-form';
 import { ValidationMessageTransformPipe } from './validation-message-transform.pipe';
 
 
 @Component({
   selector: 'app-username-password-form',
   standalone: true,
-  imports: [ReactiveFormsModule, ControlMessagesComponent , ValidationMessageTransformPipe],
+  imports: [ReactiveFormsModule, ControlMessagesComponent, ValidationMessageTransformPipe],
   templateUrl: './username-password-form.component.html',
   styleUrl: './username-password-form.component.scss',
   viewProviders: [{
@@ -30,6 +30,10 @@ export class UsernamePasswordFormComponent implements OnInit {
     return this.parentContainer.control as FormGroup;
   }
 
+  transformValidators(data: ControlMessageSettings[]) {
+
+    return data
+  }
   ngOnInit() {
     let userNameValidators = this.validators.find((i) => i.controlName == 'username')?.validators.map(i => i.validatorFn)
     if (!userNameValidators) {
@@ -44,7 +48,7 @@ export class UsernamePasswordFormComponent implements OnInit {
     this.parentFormGroup
       .addControl('password', new FormControl('', passwordValidators));
 
-    
+
   }
 
 
