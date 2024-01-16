@@ -1,0 +1,61 @@
+<ng-container *ngTemplateOutlet="defaultTemplate">
+
+</ng-container>
+
+
+<ng-template #defaultTemplate>
+
+    <div class="select-box-container">
+        <div class="select-box">
+            @if(settings.usage === 'default'){
+            <div>
+                {{selectedItem[settings.bindKey]||settings.placeholder || 'Default Placeholder text'}}
+            </div>
+            }@else {
+            <div>
+                {{selectedItem[settings.bindKey]|| settings.placeholder || 'Default Placeholder text'}}
+            </div>
+            }
+            <div class="icon" (click)="toggleOptionsPanel()">
+                @if(!showOptionsPanel){&#x25BD;}
+                @else{&#9651;}
+            </div>
+        </div>
+        <!--Slot to inject the options panel starts here -->
+        @if(showOptionsPanel){
+        @if(optionsTemplate && settings.usage === 'custom'){
+        <ng-container [ngTemplateOutlet]="optionsTemplate" [ngTemplateOutletContext]="{
+            select : this.selectItem.bind(this)
+        }">
+
+        </ng-container>
+        }@else {
+        <ng-container [ngTemplateOutlet]="defaultOptionsTemplate" 
+        >
+
+        </ng-container>
+        }
+        }
+        <!--Slot to inject the options panel ends here-->
+    </div>
+
+</ng-template>
+
+
+<ng-container>
+    <ng-template #defaultOptionsTemplate>
+
+        <div class="options-panel-container">
+            <ul class="options-panel">
+                @if(settings.usage === 'default'){
+                @for(item of settings.options ; track item[settings.trackBy]){
+                <li (click)="selectItem(item)">
+                    {{item[settings.bindKey]}}
+                </li>
+                }
+                }
+            </ul>
+        </div>
+
+    </ng-template>
+</ng-container>

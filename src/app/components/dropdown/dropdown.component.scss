@@ -1,20 +1,22 @@
-.item{
-    list-style: none;
-    padding:0px;
-    margin:0px;
-    display: flex;
-    justify-content: flex-start;
-    .code{
-        margin-left : 2rem;
-        background-color: rgb(73, 249, 29);
-        padding : 0.4rem 0.2rem;
-        border-radius: 3px;
-        font-size: small;
-        color : white
+.select-box {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    background-color: inherit;
+    color: inherit;
+    font-size: 1.2rem;
+    border: 1px solid black;
+    padding : 0.6rem;
+    border-radius: 3px;
+    .icon{
+        display: flex;
+        justify-content: flex-end;
+        cursor: pointer;
     }
 }
+
 .options-panel-container{
     position: relative;
+    width: 100%;
     margin-bottom:2rem;
     .options-panel{
         position: absolute;
